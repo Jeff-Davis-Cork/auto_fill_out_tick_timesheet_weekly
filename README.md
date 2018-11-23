@@ -15,13 +15,13 @@ sample command line / terminal command to run this script (there are 7 arguments
 
 ---------------------
 
-#cd <location of script />
+#cd ~location of script~
 
 #pip install chromedriver_installer   (or just dowload from link above)
 
 #pip install selenium
 
-#python auto_fill_out_tick.py <tick email /> <tick password /> "https://<your organization />.tickspot.com/" <project name /> <task name /> "8" "C:\Program Files\chromedriver.exe"
+#python auto_fill_out_tick.py ~tick email~ ~tick password~ "https://~your organization~.tickspot.com/" ~project name~ ~task name~ "8" "C:\Program Files\chromedriver.exe"
 
 
 
