@@ -1,5 +1,5 @@
 # This script logs into tick, adds hours per day for a standard week
-# designed to run on fridays & does not take into account holidays, etc.
+# designed to run any day & does not take into account holidays, etc.
 # if not already, need to install chromedriver to your computer (http://chromedriver.chromium.org/downloads)
 # & run 'pip install selenium' first
 
@@ -79,10 +79,18 @@ def RunThrough():
     mon, tues, wed, thurs, fri = str(mon), str(tues), str(wed), str(thurs), str(fri)
     weekList = [mon, tues, wed, thurs, fri]
     for day in weekList:
-        driver.find_element_by_xpath("//li[contains(@data-date, '%s')]" % day).click()
-        print("The script is attempting to enter hours for %s" % day)
-        FillInADaysHours()
-        time.sleep(2)
+        try:
+            driver.find_element_by_xpath("//li[contains(@data-date, '%s')]" % day).click()
+            print("The script is attempting to enter hours for %s" % day)
+            FillInADaysHours()
+            time.sleep(2)
+        except:
+            driver.find_element_by_xpath("//a[contains(@title, 'Next Dates')]").click()
+            time.sleep(2)
+            driver.find_element_by_xpath("//li[contains(@data-date, '%s')]" % day).click()
+            print("The script is attempting to enter hours for %s" % day)
+            FillInADaysHours()
+            time.sleep(2)
     print("""
 You now have hours entered for each day this week.
     """)
