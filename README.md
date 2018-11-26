@@ -4,7 +4,7 @@
 
 # This script logs into tick, adds hours per day for a standard week
 
-# designed to run on fridays & does not take into account holidays, etc.
+# designed to run any day & does not take into account holidays, etc.
 
 # if not already, need to install chromedriver to your computer (http://chromedriver.chromium.org/downloads)
 
